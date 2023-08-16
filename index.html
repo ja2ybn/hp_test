@@ -1,15 +1,42 @@
 <!DOCTYPE html><html lang="ja-jp"><head>
     <title>CALLSIGN</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/hp_test/destyle-2725d40605ad50db.css">
-    <link rel="stylesheet" href="/hp_test/_variables-597d90855083f957.css">
-    <link rel="stylesheet" href="/hp_test/_header-8dd6c138bc9ba69b.css">
-    <link rel="stylesheet" href="/hp_test/_pictureArea-193b0bcc992cb2ac.css">
-    <link rel="stylesheet" href="/hp_test/_newsArea-3c494ac7d402623d.css">
-    <link rel="stylesheet" href="/hp_test/main-b0312de7ac26ce07.css">
+    <link rel="stylesheet" href="/destyle-2725d40605ad50db.css">
+    <link rel="stylesheet" href="/_variables-3e838e6cf5e545ac.css">
+    <link rel="stylesheet" href="/_header-78819776205f2fdf.css">
+    <link rel="stylesheet" href="/_pictureArea-6c3a9eb70d49e9e3.css">
+    <link rel="stylesheet" href="/_newsArea-cc4c187bc199333c.css">
+    <link rel="stylesheet" href="/main-a022067334b23b33.css">
   
-<link rel="preload" href="/hp_test/js2mke_homepage_template-65ed6a2c29b75019_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/hp_test/js2mke_homepage_template-65ed6a2c29b75019.js"></head>
+<link rel="preload" href="/js2mke_homepage_template-dbdbddfbc01d13bf_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/js2mke_homepage_template-dbdbddfbc01d13bf.js"></head>
   <body>
 
-<script type="module">import init from '/hp_test/js2mke_homepage_template-65ed6a2c29b75019.js';init('/hp_test/js2mke_homepage_template-65ed6a2c29b75019_bg.wasm');</script></body></html>
+<script type="module">import init from '/js2mke_homepage_template-dbdbddfbc01d13bf.js';init('/js2mke_homepage_template-dbdbddfbc01d13bf_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>

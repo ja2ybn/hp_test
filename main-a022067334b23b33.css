@@ -1,0 +1,413 @@
+@charset "UTF-8";
+/*カラーパレット*/
+/*特殊な色*/
+/*画面サイズに関する定数*/
+.logo {
+  font-size: 28px;
+}
+.logo a {
+  padding: 10px 20px;
+}
+
+.Header__upper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  background: #287198;
+  color: #ffffff;
+}
+.Header__upper__logo {
+  flex: 1 1 auto;
+}
+.Header__upper__menu {
+  flex: 5 1 auto;
+}
+@media (max-width: 839px) {
+  .Header__upper {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10001;
+    box-shadow: 0px 1px 10px 0px #77767b;
+  }
+}
+.Header__lower {
+  z-index: 10000;
+  display: flex;
+  height: 60px;
+  background: #287198;
+}
+@media (min-width: 840px) {
+  .Header__lower {
+    align-items: center;
+  }
+}
+@media (max-width: 839px) {
+  .Header__lower {
+    z-index: 9999;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    height: calc(100% - 60px);
+    overflow: auto;
+    background: #ffffff;
+  }
+}
+@media (min-width: 840px) {
+  .Header__lower--isFixed {
+    position: fixed;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    box-shadow: 0px 1px 10px 0px #77767b;
+    background: #287198;
+  }
+}
+@media (max-width: 839px) {
+  .Header__lower--isNotOpen {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    flex: 0 0 auto;
+  }
+}
+.Header__lower__logo {
+  flex: 1 1 auto;
+  color: #ffffff;
+}
+@media (max-width: 839px) {
+  .Header__lower__logo {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    flex: 0 0 auto;
+  }
+}
+@media (min-width: 840px) {
+  .Header__lower__logo--isNotFixed {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    flex: 0 0 auto;
+  }
+}
+.Header__lower__menu {
+  flex: 5 1 auto;
+}
+.Header__lower__listbox {
+  box-shadow: 0px 1px 10px 0px #77767b;
+}
+
+.UpperMenu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.UpperMenu__item {
+  display: block;
+  padding: 10px 15px 10px 33px;
+}
+.UpperMenu__item__news {
+  background: url(https://ja2ybn.github.io/kinen/dialog-messages-white.svg) no-repeat left center;
+}
+.UpperMenu__item__contact {
+  background: url(https://ja2ybn.github.io/kinen/mail-white.svg) no-repeat left center;
+}
+.UpperMenu__hamburger {
+  display: block;
+  height: 50px;
+  padding: 5px 10px;
+}
+
+.LowerMenu {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 839px) {
+  .LowerMenu {
+    flex-direction: column;
+  }
+}
+@media (min-width: 840px) {
+  .LowerMenu {
+    align-items: center;
+  }
+}
+.LowerMenu__item {
+  flex: 1 1 auto;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  height: 60px;
+}
+@media (max-width: 839px) {
+  .LowerMenu__item {
+    /*SPのとき*/
+    margin-top: 10px;
+    color: #241f31;
+  }
+}
+@media (max-width: 839px) {
+  .LowerMenu__item--isAboveMenuOpen {
+    margin-top: 120px;
+  }
+}
+.LowerMenu__item__tab {
+  z-index: 10000;
+  display: block;
+  position: relative;
+  left: 10%;
+  top: 10%;
+  width: 80%;
+  height: 90%;
+  border-radius: 2px 2px 0px 0px;
+}
+@media (max-width: 839px) {
+  .LowerMenu__item__tab {
+    left: 5%;
+    width: 90%;
+  }
+}
+.LowerMenu__item__tab--isOpen {
+  background: #F2F8FF;
+  color: #241f31;
+}
+.LowerMenu__item__tab__gaiyou {
+  position: relative;
+  left: 5%;
+  display: block;
+  width: 90%;
+  height: 43px;
+  border-bottom: 4px solid #ffa348;
+}
+.LowerMenu__item__tab__gaiyou button {
+  position: relative;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 39px;
+  padding: 10px;
+}
+.LowerMenu__item__tab__kokai {
+  position: relative;
+  left: 5%;
+  display: block;
+  width: 90%;
+  height: 43px;
+  border-bottom: 4px solid #f9f06b;
+}
+.LowerMenu__item__tab__kokai button {
+  position: relative;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 39px;
+  padding: 10px;
+}
+.LowerMenu__item__tab__kakkyoku {
+  position: relative;
+  left: 5%;
+  display: block;
+  width: 90%;
+  height: 43px;
+  border-bottom: 4px solid #8ff0a4;
+}
+.LowerMenu__item__tab__kakkyoku button {
+  position: relative;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 39px;
+  padding: 10px;
+}
+.LowerMenu__item__tab__colum {
+  position: relative;
+  left: 5%;
+  display: block;
+  width: 90%;
+  height: 43px;
+  border-bottom: 4px solid #99c1f1;
+}
+.LowerMenu__item__tab__colum button {
+  position: relative;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 39px;
+  padding: 10px;
+}
+
+.HeaderList h1 {
+  font-size: 20px;
+}
+.HeaderList__about {
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  background: #F2F8FF;
+  z-index: 10002;
+  height: 120px;
+}
+@media (max-width: 839px) {
+  .HeaderList__about {
+    width: 90%;
+    border-radius: 0px 0px 2px 2px;
+    left: 5%;
+  }
+}
+@media (max-width: 839px) {
+  .HeaderList__about {
+    top: 130px;
+  }
+}
+.HeaderList__about__isClose {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  flex: 0 0 auto;
+}
+@media (min-width: 840px) {
+  .HeaderList__about--isFixed {
+    top: 60px;
+  }
+}
+.HeaderList__kokai {
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  background: #F2F8FF;
+  z-index: 10002;
+  height: 120px;
+}
+@media (max-width: 839px) {
+  .HeaderList__kokai {
+    width: 90%;
+    border-radius: 0px 0px 2px 2px;
+    left: 5%;
+  }
+}
+@media (max-width: 839px) {
+  .HeaderList__kokai {
+    top: 200px;
+  }
+}
+.HeaderList__kokai__isClose {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  flex: 0 0 auto;
+}
+@media (min-width: 840px) {
+  .HeaderList__kokai--isFixed {
+    top: 60px;
+  }
+}
+.HeaderList__kakkyoku {
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  background: #F2F8FF;
+  z-index: 10002;
+  height: 120px;
+}
+@media (max-width: 839px) {
+  .HeaderList__kakkyoku {
+    width: 90%;
+    border-radius: 0px 0px 2px 2px;
+    left: 5%;
+  }
+}
+@media (max-width: 839px) {
+  .HeaderList__kakkyoku {
+    top: 270px;
+  }
+}
+.HeaderList__kakkyoku__isClose {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  flex: 0 0 auto;
+}
+@media (min-width: 840px) {
+  .HeaderList__kakkyoku--isFixed {
+    top: 60px;
+  }
+}
+.HeaderList__colum {
+  width: 100%;
+  position: fixed;
+  top: 120px;
+  background: #F2F8FF;
+  z-index: 10002;
+  height: 120px;
+}
+@media (max-width: 839px) {
+  .HeaderList__colum {
+    width: 90%;
+    border-radius: 0px 0px 2px 2px;
+    left: 5%;
+  }
+}
+@media (max-width: 839px) {
+  .HeaderList__colum {
+    top: 340px;
+  }
+}
+.HeaderList__colum__isClose {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  padding: 0px;
+  flex: 0 0 auto;
+}
+@media (min-width: 840px) {
+  .HeaderList__colum--isFixed {
+    top: 60px;
+  }
+}
+
+@media (max-width: 839px) {
+  .PCOnly {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 840px) {
+  .SmartphoneOnly {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    flex: 0 0 auto;
+  }
+}
+
+.PictureArea {
+  display: block;
+}
+.PictureArea img {
+  width: 100%;
+}
+
+.NewsArea {
+  height: 800px;
+  position: relative;
+  background: #ffffff;
+}
